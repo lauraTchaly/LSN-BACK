@@ -8,10 +8,19 @@ import { Router } from '@angular/router';
 	styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page {
-	constructor(private authService: AuthenticationService, private router: Router) {}
+	constructor(private authService: AuthenticationService, private route: Router) {}
 
 	async logout() {
 		await this.authService.logout();
-		this.router.navigateByUrl('/', { replaceUrl: true });
+		this.route.navigateByUrl('/', { replaceUrl: true });
 	}
+	perfil() {
+		this.route.navigate(['/perfil']);
+	  }
+	  home() {
+		this.route.navigate(['/inicial']);
+	  }
+	  atividade() {
+		this.route.navigate(['/atividade']);
+	  }
 }
