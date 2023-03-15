@@ -26,7 +26,15 @@ const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
+  },  {
+    path: 'atividade',
+    loadChildren: () => import('./atividade/atividade.module').then( m => m.AtividadePageModule)
+  },
+  {
+    path: 'perfil',
+    loadChildren: () => import('./perfil/perfil.module').then( m => m.PerfilPageModule)
   }
+
 ];
 @NgModule({
 	imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
